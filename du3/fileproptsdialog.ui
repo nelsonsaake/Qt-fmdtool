@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FileProptsDialog</class>
+ <widget class="QDialog" name="FileProptsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>419</width>
+    <height>453</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>properties</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="img.qrc">
+    <normaloff>:/img/icons/Logo400.png</normaloff>:/img/icons/Logo400.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QScrollBar:vertical{
+	width: 5px; 
+}
+
+QScrollBar:horizontal{
+	height: 5px; 
+}
+
+QScrollBar:horizontal,
+QScrollBar:vertical{
+	background: rgba(250,250,250,0.5);
+}
+
+QScrollBar::sub-page:horizontal,
+QScrollBar::add-page:horizontal,
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal,
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical,
+QScrollBar::sub-page:vertical,
+QScrollBar::add-page:vertical{
+	background: none;
+}
+
+QScrollBar::handle:vertical,
+QScrollBar::handle:horizontal{
+	background: rgba(70,65,65);
+}
+
+
+/**/
+QWidget{
+	font-size: 12px;
+	background-color: rgba(255,255,255,0);
+}
+
+[objectName^=&quot;inputLabel_&quot;]{
+	margin: 5px 0;
+	font-size: 24pt;
+}
+
+Line{
+	background-color: silver;
+	border: silver;
+}
+
+QTableWidget, QScrollArea, QGroupBox, QListWidget, QTextBrowser{
+	border: 0;
+}
+
+QPushButton,QLineEdit{
+	padding: 5px 15px;
+	margin: 5px;
+	min-width: 150px;
+}
+
+[objectName^=&quot;inputLabel_&quot;], 
+[objectName = &quot;appLabel&quot;], 
+QWidget,
+QPushButton, 
+QLineEdit,
+QComboBox,
+tooltip{
+	
+	font: 12pt &quot;Monotype Corsiva&quot;;
+	font: 10pt &quot;Century Gothic&quot;;
+	font: 12pt &quot;Quicksand&quot;;
+
+}
+
+[objectName=&quot;navBar&quot;]{
+	padding: 15px;
+	margin: 5px;
+}
+
+[objectName^=&quot;navBar&quot;], 
+[objectName^=&quot;widget&quot;],
+[objectName=&quot;main_frame&quot;],
+QPushButton,
+QLineEdit, 
+QTableWidget::item{
+	border: 1px solid silver;
+}
+
+QLineEdit:hover,
+[objectName^=&quot;widget&quot;]:hover,
+QPushButton:hover{
+	border: 1px solid grey;
+}
+
+QPushButton:hover{
+	text-decoration: underline;
+}
+
+QPushButton:pressed{
+	font-size: 11px;
+	font-weight: bold;
+}
+
+QLineEdit:active{
+	background-color: white;
+}
+
+QWidget[objectName^=&quot;widget&quot;] QPushButton,
+QWidget QPushButton{
+	background-color: rgba(70,65,65);
+	color: rgb(250,245,245);
+}
+
+QTextBrowser{
+	padding-top: 15px;
+	padding-left: 15px;
+}
+
+/*border-radius*/
+[objectName=&quot;centralWidget&quot;] QWidget{
+	border-radius: 3px;
+}
+
+/*image and colors*/
+/*dark theme*/
+QWidget{
+	background-image: url(:/img/background/bkg.png);
+	background: rgba(47, 41, 39, 1);
+	color: silver;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+	background-color: rgba(255,255,255,0.2);
+}
+
+QTabBar::tab:selected {
+	color: white;
+}
+
+QTabBar::tab:!selected {
+	color: silver;
+}
+
+QFrame [objectName=&quot;line&quot;]{
+	background-color: rgba(255,255,255,0.1);
+	height: 1px;
+}
+
+/*light theme*/
+QWidget{
+	background-image: url(:/img/background/bkg.png);
+	background: white;
+	color: rgb(47, 41, 39);
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+	background-color: rgba(255,255,255,0.2);
+}
+
+QTabBar::tab:selected {
+	color: white;
+	background-color:  rgba(70,65,65);
+}
+
+QTabBar::tab:!selected {
+	color:  rgb(47, 41, 39);
+}
+
+QFrame [objectName=&quot;line&quot;]{
+	background-color: rgba(255,255,255,0.1);
+	height: 1px;
+}
+
+/*qtabwidget setup*/
+QTabWidget{
+	border: 0;
+}
+
+QTabWidget::pane { 
+    border-top: 2px solid #C2C7CB;
+    position: absolute;
+    top: -0.5em;
+	border: 0;
+}
+
+QTabBar::tab {
+	width: 150px;
+	background-color: rgba(255,255,255,0);
+}
+
+
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QWidget" name="widget_expandedpropertywrapper" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>252</width>
+       <height>111</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Double click any box below to expand here</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_tablewrapper" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>383</width>
+           <height>300</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QTableWidget" name="tableWidget">
+            <property name="styleSheet">
+             <string notr="true">border: 0;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
+ <connections/>
+</ui>

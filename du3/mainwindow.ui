@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>880</width>
+    <height>526</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>fmdTool</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="img.qrc">
+    <normaloff>:/img/icons/Logo400.png</normaloff>:/img/icons/Logo400.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QScrollBar:vertical{
+	width: 5px; 
+}
+
+QScrollBar:horizontal{
+	height: 5px; 
+}
+
+QScrollBar:horizontal,
+QScrollBar:vertical{
+	background: rgba(250,250,250,0.5);
+}
+
+QScrollBar::sub-page:horizontal,
+QScrollBar::add-page:horizontal,
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal,
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical,
+QScrollBar::sub-page:vertical,
+QScrollBar::add-page:vertical{
+	background: none;
+}
+
+QScrollBar::handle:vertical,
+QScrollBar::handle:horizontal{
+	background: rgba(70,65,65,1);
+}
+
+
+/**/
+QWidget{
+	font-size: 12px;
+	background-color: rgba(255,255,255,0);
+}
+
+[objectName^=&quot;inputLabel_&quot;]{
+	margin: 5px 0;
+	font-size: 24pt;
+}
+
+Line{
+	background-color: silver;
+	border: silver;
+}
+
+QTableWidget, QScrollArea, QGroupBox, QListWidget, QTextBrowser{
+	border: 0;
+}
+
+QPushButton,QLineEdit{
+	padding: 5px 15px;
+	margin: 5px;
+	min-width: 150px;
+}
+
+[objectName^=&quot;inputLabel_&quot;], 
+[objectName = &quot;appLabel&quot;], 
+QWidget,
+QPushButton, 
+QLineEdit,
+QComboBox,
+tooltip{
+	
+	font: 12pt &quot;Monotype Corsiva&quot;;
+	font: 10pt &quot;Century Gothic&quot;;
+	font: 12pt &quot;Quicksand&quot;;
+
+}
+
+[objectName=&quot;navBar&quot;]{
+	padding: 15px;
+	margin: 5px;
+}
+
+[objectName^=&quot;navBar&quot;], 
+[objectName^=&quot;widget&quot;],
+[objectName=&quot;main_frame&quot;],
+QPushButton,
+QLineEdit, 
+QTableWidget::item{
+	border: 1px solid silver;
+}
+
+QLineEdit:hover,
+[objectName^=&quot;widget&quot;]:hover,
+QPushButton:hover{
+	border: 1px solid grey;
+}
+
+QPushButton:hover{
+	text-decoration: underline;
+}
+
+QPushButton:pressed{
+	font-size: 11px;
+	font-weight: bold;
+}
+
+QLineEdit:active{
+	background-color: white;
+}
+
+QWidget[objectName^=&quot;widget&quot;] QPushButton,
+QWidget QPushButton{
+	background-color: rgba(70,65,65,1);
+	color: rgb(250,245,245);
+}
+
+QTextBrowser{
+	padding-top: 15px;
+	padding-left: 15px;
+}
+
+/*border-radius*/
+[objectName=&quot;centralWidget&quot;] QWidget{
+	border-radius: 3px;
+}
+
+/*image and colors*/
+/*dark theme*/
+QWidget{
+	background-image: url(:/img/background/bkg.png);
+	background: rgba(47, 41, 39, 1);
+	color: silver;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+	background-color: rgba(255,255,255,0.2);
+}
+
+QTabBar::tab:selected {
+	color: white;
+}
+
+QTabBar::tab:!selected {
+	color: silver;
+}
+
+QFrame [objectName=&quot;line&quot;]{
+	background-color: rgba(255,255,255,0.1);
+	height: 1px;
+}
+
+/*light theme*/
+QWidget{
+	background-image: url(:/img/background/bkg.png);
+	background: white;
+	color: rgb(47, 41, 39);
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+	background-color: rgba(255,255,255,0.2);
+}
+
+QTabBar::tab:selected {
+	color: white;
+	background-color:  rgba(70,65,65,1);
+}
+
+QTabBar::tab:!selected {
+	color:  rgb(47, 41, 39);
+}
+
+QFrame [objectName=&quot;line&quot;]{
+	background-color: rgba(255,255,255,0.1);
+	height: 1px;
+}
+
+/*qtabwidget setup*/
+QTabWidget{
+	border: 0;
+}
+
+QTabWidget::pane { 
+    border-top: 2px solid #C2C7CB;
+    position: absolute;
+    top: -0.5em;
+	border: 0;
+}
+
+QTabBar::tab {
+	width: 150px;
+	background-color: rgba(255,255,255,0);
+}
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="currentIndex">
+       <number>4</number>
+      </property>
+      <widget class="QWidget" name="tab_home">
+       <attribute name="title">
+        <string>Home</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QWidget" name="widget" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="appLabel">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;FmdTool&lt;/span&gt;&lt;/p&gt;&lt;p&gt;FmdTool is duplicate audio finder. Helps you to easily find and delete duplicate audio file on your computer.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Click the&lt;/span&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt; &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Next&lt;/span&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;&amp;quot; &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;button below to continue.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Minimum</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_mp">
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QPushButton" name="pushButton_mp_definition">
+               <property name="text">
+                <string>Next</string>
+               </property>
+               <property name="autoDefault">
+                <bool>false</bool>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_mp_pb">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::MinimumExpanding</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_definition">
+       <attribute name="title">
+        <string>Find Duplicates</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QWidget" name="widget_2" native="true">
+          <property name="toolTip">
+           <string/>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="inputLabel_1">
+             <property name="toolTip">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Monotype Corsiva'; font-size:12pt;&quot;&gt;Select folders &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Monotype Corsiva'; font-size:10pt;&quot;&gt;Where should we look for the duplicate audio files?&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Monotype Corsiva'; font-size:10pt;&quot;&gt;Click the&lt;/span&gt;&lt;span style=&quot; font-family:'Monotype Corsiva'; font-size:14pt;&quot;&gt; &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'Monotype Corsiva'; font-size:12pt;&quot;&gt;Add Folder&lt;/span&gt;&lt;span style=&quot; font-family:'Monotype Corsiva'; font-size:18pt;&quot;&gt;&amp;quot; &lt;/span&gt;&lt;span style=&quot; font-family:'Monotype Corsiva'; font-size:10pt;&quot;&gt;button below to continue. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Add Folders &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#5e5e5e;&quot;&gt;(search areas)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="buddy">
+              <cstring>pushButton_dp_addfolder</cstring>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QScrollArea" name="scrollArea">
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+background-color: rgba(200, 62, 52, 1);
+color: white;
+}</string>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>826</width>
+                <height>247</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_14">
+                 <item>
+                  <layout class="QGridLayout" name="gridLayout"/>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_3">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignRight">
+            <widget class="QPushButton" name="pushButton_dp_addfolder">
+             <property name="toolTip">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Monotype Corsiva'; font-size:12pt;&quot;&gt;Select folders &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Monotype Corsiva'; font-size:10pt;&quot;&gt;Where should we look for the duplicate audio files?&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Monotype Corsiva'; font-size:10pt;&quot;&gt;click  continue. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="text">
+              <string>+ Add Folder</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignLeft">
+            <widget class="QPushButton" name="pushButton_dp_findduplicates">
+             <property name="text">
+              <string>Find Duplicates</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_output">
+       <attribute name="title">
+        <string>Output</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QScrollArea" name="scrollArea_3">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_3">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>844</width>
+             <height>443</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <item>
+             <widget class="QWidget" name="widget_5" native="true">
+              <layout class="QVBoxLayout" name="verticalLayout_11">
+               <item>
+                <widget class="QStackedWidget" name="stackedWidget">
+                 <property name="currentIndex">
+                  <number>1</number>
+                 </property>
+                 <widget class="QWidget" name="page_lookingforduplicate">
+                  <layout class="QVBoxLayout" name="verticalLayout_12">
+                   <item>
+                    <widget class="QWidget" name="widget_scanninganimationwrapper" native="true">
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(46, 46, 46);
+border: 0;</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_17">
+                      <item>
+                       <widget class="QLabel" name="label_scanninganimation">
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true"/>
+                        </property>
+                        <property name="text">
+                         <string>Searching animation plate</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_scanningmessage">
+                     <property name="text">
+                      <string>Please wait while we search for duplicates ...</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_default">
+                  <layout class="QVBoxLayout" name="verticalLayout_20">
+                   <item>
+                    <widget class="QLabel" name="label_op_default">
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Output&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_foundduplicates">
+                  <layout class="QVBoxLayout" name="verticalLayout_13">
+                   <item>
+                    <widget class="QLabel" name="label_duplicatesummary">
+                     <property name="text">
+                      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Freeable space(selected files)&lt;/span&gt;: &lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:48pt; color:#c83e34;&quot;&gt;%1 &lt;/span&gt;&lt;span style=&quot; font-size:16pt; color:#c83e34;&quot;&gt;%2&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:28pt; color:#c83e34;&quot;&gt;%3 &lt;/span&gt;&lt;span style=&quot; font-size:16pt; color:#c83e34;&quot;&gt;Bytes&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;%4 &lt;/span&gt;files;&lt;span style=&quot; font-size:20pt;&quot;&gt; &lt;/span&gt; &lt;span style=&quot; font-size:20pt; color:#c83e34;&quot;&gt;%5 &lt;/span&gt;&lt;span style=&quot; color:#c83e34;&quot;&gt;Selected&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="wordWrap">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item alignment="Qt::AlignLeft">
+                    <widget class="QPushButton" name="pushButton_op_delete">
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+background-color: rgba(200, 62, 52, 1);
+color: white;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>Delete Duplicates</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_deletingduplicates">
+                  <layout class="QVBoxLayout" name="verticalLayout_18">
+                   <item>
+                    <widget class="QWidget" name="widget_deletinganimationwrapper" native="true">
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(80, 76, 68);
+border: 0;</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_7">
+                      <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                       <widget class="QLabel" name="label_deletinganimation">
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true"/>
+                        </property>
+                        <property name="text">
+                         <string>Deleting animation plate</string>
+                        </property>
+                        <property name="scaledContents">
+                         <bool>true</bool>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_deletingmessage">
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please wait while we delete the duplicates files ...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page_afterdeletingduplicates">
+                  <layout class="QVBoxLayout" name="verticalLayout_19">
+                   <item>
+                    <widget class="QLabel" name="label_deletesummary">
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You have cleared:&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;%1 &lt;/span&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Giga Bytes&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;%2 &lt;/span&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Bytes&lt;/span&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="widget_4" native="true">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	padding: 15px;
+	text-decoration: none;
+}
+
+QLabel:hover{
+	font-size: 15pt;
+}</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_9">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_duplicatesList"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_about">
+       <attribute name="title">
+        <string>About</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_15">
+        <item>
+         <widget class="QWidget" name="widget_6" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <widget class="QTextBrowser" name="textBrowser_about">
+             <property name="html">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Quicksand'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;FmdTool&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Content&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;#about&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1e679f;&quot;&gt;About&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;#version&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1e679f;&quot;&gt;Version&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;#contact&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1e679f;&quot;&gt;Contact&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;#by&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1e679f;&quot;&gt;By&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:20pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;about&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;bout&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FmdTool helps you to find duplicate audio files and delete them.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;version&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;V&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;ersion&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2.0&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;contact&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;ontact&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Email: nelsonsaakekofi@gmail.com&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;WhatsApp: 0548876758&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;by&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;B&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;y &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Nelson Kofi Saake&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_help">
+       <attribute name="title">
+        <string>Help</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_21">
+        <item>
+         <widget class="QWidget" name="widget_8" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_22">
+           <item>
+            <widget class="QTextBrowser" name="textBrowser_help">
+             <property name="html">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Quicksand'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;Help&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;Content&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;#findduplicatespage&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1e679f;&quot;&gt;Find Duplicates Page&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#1e679f;&quot;&gt;	&lt;/span&gt;&lt;a href=&quot;#selectfolders&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1e679f;&quot;&gt;Select Folders&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#1e679f;&quot;&gt;	&lt;/span&gt;&lt;a href=&quot;#keepcheckbox&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1e679f;&quot;&gt;Keep Check Box&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#1e679f;&quot;&gt;	&lt;/span&gt;&lt;a href=&quot;#findduplicatesbutton&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1e679f;&quot;&gt;Find Duplicates Button&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;#outputpage&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1e679f;&quot;&gt;Output Page&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#1e679f;&quot;&gt;	&lt;/span&gt;&lt;a href=&quot;#deletecheckbox&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1e679f;&quot;&gt;Delete Check Box&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;findduplicatespage&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;ind Duplicates Page&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This is the second page. You can get to this page by clicking the &amp;quot;Find Duplicates&amp;quot; button at the button of the first page; or by clicking the &amp;quot;Find Duplicates&amp;quot; tab at the top of the application.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;selectfolders&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;elect Folders&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Click the &amp;quot;Add Folder&amp;quot; button on the &amp;quot;Find Duplicates&amp;quot; Page and select a folder. &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You can select as many folders as you want.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;We search for duplicate, all the files (music files) in these folders, and only these folders will be considered. &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;keepcheckbox&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;eep Check Box&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When you check the &amp;quot;Keep&amp;quot; check box of a folder, when a duplicate is found and it is in this folder, is will not be checked for deleting(on the output page) unless otherwise specified by you.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;findduplicatesbutton&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;ind Duplicates Button&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This button will start the actual process of finding duplicates. This is found on the &amp;quot;Find Duplicates&amp;quot; page.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;outputpage&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;O&lt;/span&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;utput Page&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This is the third page. You can get to this page by clicking the &amp;quot;Find Duplicates&amp;quot; button at the button of the second(&amp;quot;Find Duplicates&amp;quot;) page; or by clicking the &amp;quot;Output&amp;quot; tab at the top of the application.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;deletecheckbox&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;D&lt;/span&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;elete Check Box&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When this check box is checked the file will be deleted if the delete button is clicked. This is regardless of if the folder is a keep folder or not. &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:20pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
+ <connections/>
+</ui>
